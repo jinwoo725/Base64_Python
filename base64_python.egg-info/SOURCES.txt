@@ -1,0 +1,8 @@
+README.md
+setup.py
+base64_python/__init__.py
+base64_python/module.py
+base64_python.egg-info/PKG-INFO
+base64_python.egg-info/SOURCES.txt
+base64_python.egg-info/dependency_links.txt
+base64_python.egg-info/top_level.txt
