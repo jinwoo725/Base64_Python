@@ -8,9 +8,7 @@ class Base64
 Exam
 
 -import base64_python
-
 -base64 = base64_python.Base64()
-
 -print(base64._encoding("test"))
-
 -print(base64._decoding("dGVzdA=="))
+
