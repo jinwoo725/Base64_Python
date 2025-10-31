@@ -21,9 +21,9 @@ pip install base64_python
 function<br>
 -
 - **Base64.encode(str|bytes) -> str**<br>
-- **Base64.decode(str|bytes) -> str**<br>
+- **Base64.decode(str|bytes) -> bytes**<br>
 - **Base64_Url.encode(str|bytes) -> str**<br>
-- **Base64_Url.decode(str|bytes) -> str**<br>
+- **Base64_Url.decode(str|bytes) -> bytes**<br>
 - **test() -> str**
 
 Exam<br>
@@ -35,15 +35,19 @@ base64 = base64_python.Base64()
 base64_url = base64_python.Base64_Url()
 print(base64.encode("Exam"))
 print(base64.decode("RXhhbQ=="))
+print(base64.decode("RXhhbQ==").decode("utf-8"))
 print(base64_url.encode("Exam"))
 print(base64_url.decode("RXhhbQ"))
+print(base64_url.decode("RXhhbQ").decode("utf-8"))
 print(base64_python.test())
 ```
 **Output**<br>
 ```output
 RXhhbQ==
+bytearray(b'Exam\x00')
 Exam
 RXhhbQ
+bytearray(b'Exam\x00')
 Exam
 +------------------------------------+
 | Input Text     : Exam              |

@@ -29,7 +29,7 @@ class Base64:
         except Exception as e:
             raise e
 
-    def decode(self, data:str|bytes) -> str:
+    def decode(self, data:str|bytes) -> bytes:
         """
         This is a decoder function
         Decodes a base64 encoded string|bytes.
@@ -43,7 +43,7 @@ class Base64:
             bin_data = [bin_data[i:i+8] for i in range(0, len(bin_data), 8)]
             int_data = [int(i, 2) for i in bin_data]
             ord_data = bytearray(int_data)
-            return ord_data.decode("utf-8")
+            return ord_data
         except Exception as e:
             raise e
 
@@ -76,7 +76,7 @@ class Base64_Url:
         except Exception as e:
             raise e
 
-    def decode(self, data:str|bytes) -> str:
+    def decode(self, data:str|bytes) -> bytes:
         """
         This is a decoder function
         Decodes a base64 encoded string|bytes.
@@ -90,7 +90,7 @@ class Base64_Url:
             bin_data = [bin_data[i:i+8] for i in range(0, len(bin_data), 8)]
             int_data = [int(i, 2) for i in bin_data]
             ord_data = bytearray(int_data)
-            return ord_data.decode("utf-8")
+            return ord_data
         except Exception as e:
             raise e
     
@@ -102,7 +102,7 @@ def test(type:int = 0) -> str:
     start = time()
     base64 = Base64()
     str_data = base64.encode(b"Exam") # or str_data = base64.encode("Exam")
-    base64_data = base64.decode(b"RXhhbQ") # or base64_data = base64.decode("RXhhbQ==")
+    base64_data = base64.decode(b"RXhhbQ").decode("utf-8") # or base64_data = base64.decode("RXhhbQ==")
     end = time()
     text1 = f"""+------------------------------------+
 | Input Text     : Exam              |
@@ -115,7 +115,7 @@ def test(type:int = 0) -> str:
     start = time()
     base64 = Base64_Url()
     str_data = base64.encode(b"Exam") # or str_data = base64.encode("Exam")
-    base64_data = base64.decode(b"RXhhbQ") # or base64_data = base64.decode("RXhhbQ==")
+    base64_data = base64.decode(b"RXhhbQ").decode("utf-8") # or base64_data = base64.decode("RXhhbQ==")
     end = time()
     text2 = f"""+------------------------------------+
 | Input Text     : Exam              |
