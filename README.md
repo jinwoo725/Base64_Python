@@ -32,7 +32,7 @@ import base64_python
 base64 = base64_python.Base64()
 print(base64.encode("Exam"))
 print(base64.decode("RXhhbQ=="))
-print(base64.test())
+print(base64_python.test())
 ```
 **Output**<br>
 ```output
@@ -48,5 +48,6 @@ Exam
 
 License<br>
 -
+
 
 This project is licensed under the terms of the MIT license.
